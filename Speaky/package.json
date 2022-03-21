@@ -1,0 +1,25 @@
+{
+  "name": "speaky",
+  "version": "1.0.0",
+  "description": "Speech to text",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Button99/Speaky.git"
+  },
+  "keywords": [
+    "Speaky"
+  ],
+  "author": "Christos Koubis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Button99/Speaky/issues"
+  },
+  "homepage": "https://github.com/Button99/Speaky#readme",
+  "dependencies": {
+    "@deepgram/sdk": "^1.2.4"
+  }
+}
