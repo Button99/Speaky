@@ -1,0 +1,32 @@
+{
+  "name": "speaky",
+  "version": "1.0.0",
+  "description": "Speech to text",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Button99/Speaky.git"
+  },
+  "keywords": [
+    "Speaky"
+  ],
+  "author": "Christos Koubis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Button99/Speaky/issues"
+  },
+  "homepage": "https://github.com/Button99/Speaky#readme",
+  "dependencies": {
+    "@deepgram/sdk": "^1.2.4",
+    "electron-reloader": "^1.2.3",
+    "pdfkit": "^0.13.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "electron": "^17.1.2"
+  }
+}
