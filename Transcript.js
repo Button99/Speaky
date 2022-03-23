@@ -4,7 +4,7 @@ function transcription(file, lang) {
     const fs= require('fs');
     const mime= require('mime-types');
 
-    const deepGram= new Deepgram('4f302e1890d12d28aa93deb2772a3d5978066691');
+    const deepGram= new Deepgram('INSERT_YOUR_API_KEY');
         
     const audio= fs.readFileSync(file);
 
