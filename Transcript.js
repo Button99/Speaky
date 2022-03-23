@@ -1,6 +1,4 @@
-const { desktopCapturer, systemPreferences } = require('electron');
-
-function transcription(file) {
+function transcription(file, lang) {
     const { Deepgram } = require('@deepgram/sdk');
     const {jsPDF}= require('jspdf');
     const fs= require('fs');
@@ -12,23 +10,24 @@ function transcription(file) {
 
     source= { 
         buffer: audio,
-        mimetype: mime.extension(file)
+        mimetype: mime.extension(file),
     }
         
     deepGram.transcription.preRecorded(source, {
         punctuate: true,
         numerals: true,
+        language: lang
     }).then((res) => {
         const doc= new jsPDF({
             orientation: 'landscape',
             unit: 'mm',
             format: 'a4'
         });
-
+        const date= new Date();
+        doc.text('Created: ' + date , 10, 10);
         var split= doc.splitTextToSize(JSON.stringify(res.results.channels[0].alternatives[0].transcript), 50);
         doc.text(split, 20, 20);
-        alert(doc.getTextWidth(JSON.stringify(res.results.channels[0].alternatives[0].transcript)));
-        doc.save('s2s.pdf');
+        doc.save('Rec' + date.getTime() +date.getDate() + date.getMonth() + date.getFullYear() + '.pdf');
     }).catch((err) => {
         alert(err);
     });

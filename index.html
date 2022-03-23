@@ -51,8 +51,6 @@
 
     wrapper.innerHTML= opt;
     function getData() {
-        alert('works');
-        var trs= new transcription(document.getElementById('uploaded-file').files[0].path);
-        alert('ok');
+        var trs= new transcription(document.getElementById('uploaded-file').files[0].path, document.getElementById('select-lang').value);
     }
 </script>
