@@ -14,14 +14,19 @@
         For more information visit github.
     </p>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 m-2">
             <div class="form-group-files">
                 <label>Upload your wav file</label>
                 <input type="file" class="form-control" id="uploaded-file" /> 
             </div>
         </div>
     </div>
-    <button class="btn btn-primary mx-auto" id="transcript-btn" onclick="getData()">
+    <div class="row m-2 col-md-6">
+        <select class="form-select" id="select-lang">
+        </select>
+    </div>
+
+    <button class="btn btn-primary m-2" id="transcript-btn" onclick="getData()">
       Transcript
     </button>
 </body>
@@ -31,8 +36,22 @@
 </script>
 
 <script>
+
+    const languages= [{'zh': 'Chinese'}, {'zh-CN': 'China'}, {'zh-TW': 'Taiwan'}, {'nl': 'Dutch'}, {'en': 'English'},
+        {'en-AU': 'Australia'}, {'en-GB': 'United Kingdom'}, {'en-IN': 'India'}, {'en-NZ': 'New Zealand'}, {'en-US': 'United States'},
+        {'fr': 'French'}, {'fr-CA':'Canada'}, {'de': 'German'}, {'hi': 'Hindi'}, {'id': 'Indonesian'}, {'it': 'Italian'},
+        {'ja': 'Japanese'}, {'ko': 'Korean'}, {'pt':'Portugese'}, {'pt-BR': 'Brazil'}, {'ru': 'Russian'}, {'es': 'Spanish'},
+        {'es-419': 'Latin America'}, {'sv': 'Swedish'}, {'tr': 'Turkish'}, {'uk': 'Ukrainian'}];
+
+    var opt= '';
+    var wrapper= document.getElementById('select-lang');
+    for(let i=0; i< languages.length; i++) {
+        opt+= "<option value=" + Object.keys(languages[i]) +">" + Object.values(languages[i]) + '</option>';
+    }
+
+    wrapper.innerHTML= opt;
     function getData() {
-        alert(document.getElementById('uploaded-file').files[0].path);
+        alert('works');
         var trs= new transcription(document.getElementById('uploaded-file').files[0].path);
         alert('ok');
     }
