@@ -29,6 +29,8 @@
     <button class="btn btn-primary m-2" id="transcript-btn" onclick="getData()">
       Transcript
     </button>
+
+    <p id="done"></p>
 </body>
 </html>
 
@@ -52,5 +54,7 @@
     wrapper.innerHTML= opt;
     function getData() {
         var trs= new transcription(document.getElementById('uploaded-file').files[0].path, document.getElementById('select-lang').value);
+        const done= document.getElementById('done');
+        done.innerHTML += 'Done! Check the folder of the program for the pdf';
     }
 </script>
