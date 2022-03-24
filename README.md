@@ -8,6 +8,6 @@ Link: https://deepgram.com/
 
 ## To run
 
-  1. `npm-install`
+  1. `npm install`
 
-  2. `npm-start`
+  2. `npm start`
